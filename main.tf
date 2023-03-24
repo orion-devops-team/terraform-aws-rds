@@ -90,11 +90,12 @@ resource "aws_db_instance" "default" {
     aws_db_option_group.default
   ]
 
-  lifecycle {
+  #lifecycle not supported for CloudClontroller
+  /*lifecycle {
     ignore_changes = [
       snapshot_identifier, # if created from a snapshot, will be non-null at creation, but null afterwards
     ]
-  }
+  }*/
 }
 
 resource "aws_db_parameter_group" "default" {
